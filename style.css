@@ -48,11 +48,16 @@ nav ul li img {
 
 .container {
     min-height: 75vh;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     color: white;
     margin: 5vh 10vw;
     border-radius: 0.2rem;
-    background-image: url('bg.jpg');
+    background-image: url('covers/0.jpg');
+    background-repeat: no-repeat;
+    background-position-x: 80%;
+    background-position-y: 50%;
+    background-size: 45vh;
+    box-shadow: 10px 10px rgb(228, 228, 228);
 }
 
 .songItemContainer {
@@ -87,6 +92,11 @@ nav ul li img {
 
 .timestamp i {
     cursor: pointer;
+}
+
+.timestamp {
+    font-size: small;
+    font-weight: lighter;
 }
 
 .songList h1 {
@@ -136,6 +146,34 @@ nav ul li img {
     height: 40vh;
 }
 
+.fa-play-circle {
+    border: 4px solid rgb(160, 241, 255);
+    border-radius: 40px;
+}
+
+.fa-pause-circle {
+    border: 4px solid rgb(160, 241, 255);
+    border-radius: 40px;
+}
+
+.fa-play-circle:hover {
+    border: 5px solid rgb(160, 241, 255);
+}
+
+.fa-pause-circle:hover {
+    border: 5px solid rgb(160, 241, 255);
+}
+
+
+.icons .fa-play-circle {
+    border: none;
+}
+
+.icons .fa-pause-circle {
+    border: none;
+}
+
+
 @media only screen and (max-width: 700px) {
 
     .container {
@@ -168,7 +206,7 @@ nav ul li img {
         /* height: 4vh; */
         width: 10vw;
         border-radius: 10px;
-        margin: 0.5vh 5vw 0 0;
+        margin: 0.5vh 5vw 0 2vw;
     }
 
     .brandName {
@@ -179,7 +217,20 @@ nav ul li img {
         font-size: 1.1rem;
         margin: 1vh 12vw 0 0;
     }
-    /* .songInfo img {
-        margin: 0 1vw;
-    } */
+    
+    .fa-play-circle {
+        border: 5px solid rgb(160, 241, 255);
+        border-radius: 40px;
+        margin: 2px;
+
+    }
+    
+    .fa-pause-circle {
+        border: 5px solid rgb(160, 241, 255);
+        border-radius: 40px;
+    }
+
+    .timestamp {
+        font-size: smaller;
+    }
 }

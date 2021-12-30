@@ -7,6 +7,8 @@ let myProgressBar = document.querySelector('#myProgressBar');
 let gif = document.querySelector('#gif');
 let songItemPlay = document.querySelectorAll('.songItemPlay');
 let masterSongName = document.querySelector('#masterSongName');
+let container = document.querySelector('.container');
+
 
 gif.style.opacity = 0;
 let progress = 0;
@@ -20,12 +22,12 @@ let songs = [{
         coverPath: "covers/0.jpg"
     },
     {
-        songName: "Ambiant piano - Zakhar Valaha",
+        songName: "Ambiant piano - Zakhar V.",
         filePath: "songs/1.mp3",
         coverPath: "covers/1.jpg"
     },
     {
-        songName: "Chilled acoustic indie folk - Lesfm",
+        songName: "Acoustic indie folk - Lesfm",
         filePath: "songs/2.mp3",
         coverPath: "covers/2.jpg"
     },
@@ -35,7 +37,7 @@ let songs = [{
         coverPath: "covers/3.jpg"
     },
     {
-        songName: "Emotional inspiring - Coma Media",
+        songName: "Emotional inspiring - Coma",
         filePath: "songs/4.mp3",
         coverPath: "covers/4.jpg"
     },
@@ -55,12 +57,12 @@ let songs = [{
         coverPath: "covers/7.jpg"
     },
     {
-        songName: "The way home - Zakhar Valaha",
+        songName: "The way home - Zakhar V.",
         filePath: "songs/8.mp3",
         coverPath: "covers/8.webp"
     },
     {
-        songName: "We confidently go the victory - Alex",
+        songName: "We confidently go.. - Alex",
         filePath: "songs/9.mp3",
         coverPath: "covers/9.jpg"
     }
@@ -124,6 +126,7 @@ Array.from(songItemPlay).forEach((element) => {
             masterPlay.classList.add('fa-play-circle');
             audioElement.pause();
         }
+        changeBackground();
     })
 })
 
@@ -145,6 +148,11 @@ function removePlayAddPause() {
     })
 }
 
+function changeBackground()
+{
+    container.style.backgroundImage = `url("covers/${songIndex}.jpg")`;
+}
+
 function nextSongPlay() {
     removePauseAddPlay();
     if (songIndex >= 9)
@@ -154,10 +162,12 @@ function nextSongPlay() {
     audioElement.src = `songs/${songIndex}.mp3`;
     audioElement.currentTime = 0;
     audioElement.play();
+    gif.style.opacity = 1;
     masterSongName.innerText = songs[songIndex].songName;
     masterPlay.classList.remove('fa-play-circle');
     masterPlay.classList.add('fa-pause-circle');
     removePlayAddPause();
+    changeBackground();
 }
 
 function previousSongPlay() {
@@ -169,10 +179,12 @@ function previousSongPlay() {
     audioElement.src = `songs/${songIndex}.mp3`;
     audioElement.currentTime = 0;
     audioElement.play();
+    gif.style.opacity = 1;
     masterSongName.innerText = songs[songIndex].songName;
     masterPlay.classList.remove('fa-play-circle');
     masterPlay.classList.add('fa-pause-circle');
     removePlayAddPause();
+    changeBackground();
 }
 
 masterPlay.addEventListener('click', playNPause);
@@ -180,4 +192,3 @@ audioElement.addEventListener('timeupdate', timeProgress);
 myProgressBar.addEventListener('change', durationUpdate);
 next.addEventListener('click', nextSongPlay);
 previous.addEventListener('click', previousSongPlay);
-
