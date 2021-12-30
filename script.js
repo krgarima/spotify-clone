@@ -52,7 +52,7 @@ let songs = [{
         coverPath: "covers/6.jpg"
     },
     {
-        songName: "Soft ambient - Alex",
+        songName: "   Soft ambient - Alex",
         filePath: "songs/7.mp3",
         coverPath: "covers/7.jpg"
     },
